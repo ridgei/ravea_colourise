@@ -1,0 +1,10 @@
+Create each frame's image files from a movie file
+
+~/Downloads/ffmpeg/ffmpeg -i foo.mp4 -qscale:v 2 -vf fps=24 %04d.jpg
+
+
+
+Create a video from images (e.g. ProRes, fps=23.976)
+
+ffmpeg -i ~/%d.jpg -c:v prores_aw -profile:v 3 -pix_fmt yuv422p10 -r 24/1.001 foo.mov
+
